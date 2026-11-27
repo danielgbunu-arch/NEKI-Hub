@@ -1,0 +1,1375 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="NEKI Hub: prototipo académico de control de acceso inteligente para negocios, desarrollado con ESP32, sensores y control por voz."
+    />
+    <meta name="theme-color" content="#07182e" />
+    <title>NEKI Hub | Control de acceso inteligente</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="config.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#inicio">Saltar al contenido</a>
+    <div id="mobileShade" class="mobile-shade" aria-hidden="true"></div>
+    <div class="site-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Navegación de NEKI">
+        <a href="#inicio" class="brand" aria-label="NEKI: ir al inicio">
+          <span class="brand-mark" aria-hidden="true"
+            ><svg viewBox="0 0 48 48" fill="none">
+              <path
+                d="M24 3 43 11v12c0 11.2-7.2 18.6-19 22C12.2 41.6 5 34.2 5 23V11L24 3Z"
+                stroke="currentColor"
+                stroke-width="2.7"
+              />
+              <path
+                d="M16 30V17l16 13V17"
+                stroke="currentColor"
+                stroke-width="3.7"
+                stroke-linejoin="round"
+              /></svg
+          ></span>
+          <span
+            ><strong>NEKI<span class="brand-dot">.</span></strong
+            ><small>TECHNOLOGIES</small></span
+          >
+        </a>
+        <div class="side-caption">PLATAFORMA DE PRESENTACIÓN</div>
+        <nav class="side-nav" id="sideNav" aria-label="Secciones">
+          <a href="#inicio" class="nav-link active"
+            ><b>01</b><span>Inicio</span></a
+          >
+          <a href="#nosotros" class="nav-link"
+            ><b>02</b><span>Sobre nosotros</span></a
+          >
+          <a href="#producto" class="nav-link"
+            ><b>03</b><span>Nuestro producto</span></a
+          >
+          <a href="#funcionamiento" class="nav-link"
+            ><b>04</b><span>¿Cómo funciona?</span></a
+          >
+          <a href="#simulacion" class="nav-link"
+            ><b>05</b><span>Simulación</span></a
+          >
+          <a href="#monitoreo" class="nav-link"
+            ><b>06</b><span>Monitoreo real</span></a
+          >
+          <a href="#desarrollo" class="nav-link"
+            ><b>07</b><span>Proceso de desarrollo</span></a
+          >
+          <a href="#codigo" class="nav-link"
+            ><b>08</b><span>Tecnología y código</span></a
+          >
+          <a href="#resultados" class="nav-link"
+            ><b>09</b><span>Resultados</span></a
+          >
+          <a href="#equipo" class="nav-link"
+            ><b>10</b><span>Nuestro equipo</span></a
+          >
+          <a href="#contacto" class="nav-link"
+            ><b>11</b><span>Contacto</span></a
+          >
+        </nav>
+        <div class="side-footer">
+          <span class="side-dot"></span>
+          <div>
+            <b>Proyecto integrador</b><small>UTMACH · Nivelación 2026</small>
+          </div>
+        </div>
+      </aside>
+      <div class="main-column">
+        <header class="topbar">
+          <button
+            id="menuToggle"
+            class="icon-button menu-toggle"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="sidebar"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <div class="topbar-breadcrumb">
+            <span>NEKI</span><span class="crumb">/</span
+            ><b id="currentSection">Inicio</b>
+          </div>
+          <div class="topbar-right">
+            <span class="topbar-label"
+              ><span class="tiny-pulse"></span>Prototipo académico</span
+            ><a class="topbar-link" href="#contacto"
+              >Contáctanos <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </header>
+        <main id="main-content">
+          <section
+            id="inicio"
+            class="hero page-section"
+            aria-labelledby="heroTitle"
+          >
+            <div class="hero-body">
+              <div class="eyebrow light">
+                <span class="eyebrow-line"></span> CONTROL DE ACCESO INTELIGENTE
+                <span class="eyebrow-line"></span>
+              </div>
+              <div class="hero-grid">
+                <div class="hero-copy">
+                  <div class="pill-glow">
+                    <span class="light-dot"></span> Tecnología que cuida tus
+                    espacios
+                  </div>
+                  <h1 id="heroTitle">
+                    Seguridad más <em>inteligente.</em><br />Accesos más
+                    <em>simples.</em>
+                  </h1>
+                  <p>
+                    Conoce <strong>NEKI Hub</strong>, un prototipo de control de
+                    acceso que combina detección de presencia, apertura de
+                    puertas y comandos de voz en una sola solución tecnológica.
+                  </p>
+                  <div class="hero-actions">
+                    <a href="#producto" class="button button-primary"
+                      >Explorar NEKI Hub <span aria-hidden="true">↗</span></a
+                    ><a href="#simulacion" class="button button-outline"
+                      >Ver demostración <span aria-hidden="true">▶</span></a
+                    >
+                  </div>
+                  <div class="hero-tags">
+                    <span><i>◆</i> ESP32</span
+                    ><span><i>◆</i> Automatización</span
+                    ><span><i>◆</i> Voz + sensores</span>
+                  </div>
+                </div>
+                <div
+                  class="hero-art"
+                  aria-label="Ilustración conceptual de un sistema de control de acceso con puerta y sensores"
+                >
+                  <div class="art-orbit orbit-one"></div>
+                  <div class="art-orbit orbit-two"></div>
+                  <div class="art-status">
+                    <span class="tiny-pulse"></span> SISTEMA / CONCEPTO
+                  </div>
+                  <svg
+                    class="door-illustration"
+                    viewBox="0 0 390 410"
+                    role="img"
+                    aria-labelledby="svgTitle"
+                  >
+                    <title id="svgTitle">
+                      Representación digital conceptual de una puerta controlada
+                      por sensores
+                    </title>
+                    <defs>
+                      <linearGradient id="doorG" x1="0" y1="0" x2="1" y2="1">
+                        <stop stop-color="#46c8ff" />
+                        <stop offset="1" stop-color="#1360aa" />
+                      </linearGradient>
+                      <linearGradient id="panelG" x1="0" y1="0" x2="1" y2="1">
+                        <stop stop-color="#163c61" />
+                        <stop offset="1" stop-color="#061b35" />
+                      </linearGradient>
+                      <filter id="glow">
+                        <feGaussianBlur stdDeviation="6" result="b" />
+                        <feMerge>
+                          <feMergeNode in="b" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    <path
+                      d="M20 340 200 245 371 340 188 402Z"
+                      fill="#153a59"
+                      fill-opacity=".6"
+                      stroke="#347cb0"
+                      stroke-opacity=".4"
+                    />
+                    <path d="M110 75 242 25 300 62 164 116Z" fill="#20557e" />
+                    <path
+                      d="M110 75v250l54 31V116Z"
+                      fill="#0a2947"
+                      stroke="#4b92c4"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M164 116v240l136-46V62Z"
+                      fill="url(#panelG)"
+                      stroke="#65b4e5"
+                      stroke-width="3"
+                    />
+                    <path
+                      d="M177 130 289 89v211l-112 39Z"
+                      fill="#06192d"
+                      stroke="#265f86"
+                    />
+                    <path
+                      d="M176 132 275 99v196l-99 35Z"
+                      fill="url(#doorG)"
+                      fill-opacity=".18"
+                    />
+                    <path
+                      d="M179 133 255 107v191l-76 27Z"
+                      fill="#0d365a"
+                      stroke="#68d7ff"
+                      stroke-opacity=".65"
+                    />
+                    <path
+                      d="M231 195v54"
+                      stroke="#76e8ff"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      filter="url(#glow)"
+                    />
+                    <circle
+                      cx="250"
+                      cy="214"
+                      r="7"
+                      fill="#3ae8df"
+                      filter="url(#glow)"
+                    />
+                    <path
+                      d="m147 155-23 8v33l23-8Z"
+                      fill="#185078"
+                      stroke="#7ee6ff"
+                    />
+                    <circle
+                      cx="136"
+                      cy="178"
+                      r="5"
+                      fill="#53f0d5"
+                      filter="url(#glow)"
+                    />
+                    <circle
+                      cx="229"
+                      cy="72"
+                      r="5"
+                      fill="#48f7d0"
+                      filter="url(#glow)"
+                    />
+                    <path
+                      d="M223 55c13-13 30-13 43 0M217 44c19-20 42-20 60 0"
+                      fill="none"
+                      stroke="#4ed9ff"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M57 280h63m-23-10 23 10-23 10M316 163h46m-14-10 14 10-14 10"
+                      stroke="#36b8f4"
+                      stroke-width="2"
+                      stroke-dasharray="4 6"
+                    />
+                    <circle cx="58" cy="280" r="6" fill="#46dcff" />
+                    <circle cx="318" cy="163" r="6" fill="#46dcff" />
+                  </svg>
+                  <div class="art-floating art-left">
+                    <small>DETECCIÓN</small><strong>Sensor de presencia</strong
+                    ><span><i class="mini-dot"></i> Entrada monitorizada</span>
+                  </div>
+                  <div class="art-floating art-right">
+                    <span class="check-icon">✓</span>
+                    <div>
+                      <small>CONTROL</small
+                      ><strong>Apertura automatizada</strong>
+                    </div>
+                  </div>
+                  <div class="art-caption">
+                    Ilustración conceptual · Foto real pendiente
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-bottom">
+              <div><strong>01</strong><span>Solución de acceso</span></div>
+              <div>
+                <strong>ESP32</strong><span>Controlador principal</span>
+              </div>
+              <div><strong>08</strong><span>Integrantes del equipo</span></div>
+              <div>
+                <strong>2026</strong><span>Proyecto de nivelación</span>
+              </div>
+            </div>
+          </section>
+          <section
+            id="nosotros"
+            class="section page-section"
+            aria-labelledby="nosotrosTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">02 / NUESTRA IDENTIDAD</span>
+                <h2 id="nosotrosTitle">
+                  La tecnología al servicio de la <em>tranquilidad.</em>
+                </h2>
+              </div>
+              <p>
+                Una propuesta académica con visión de producto: hacer más
+                práctico el control de accesos en pequeños negocios.
+              </p>
+            </div>
+            <div class="about-grid">
+              <div class="about-story surface">
+                <span class="tiny-label">EL ORIGEN DE NEKI</span>
+                <h3>Una necesidad real. Una solución tecnológica.</h3>
+                <p>
+                  NEKI nace como una propuesta para mejorar la gestión de
+                  entradas en espacios comerciales. La idea es reducir la
+                  dependencia de la apertura manual de puertas y aportar una
+                  forma sencilla de visualizar los eventos de acceso.
+                </p>
+                <p>
+                  Como empresa ficticia,
+                  <strong>NEKI Technologies</strong> presenta NEKI Hub, un
+                  prototipo integrador desarrollado con electrónica,
+                  programación y una interfaz web de presentación.
+                </p>
+                <div class="quote-strip">
+                  <span>“</span>
+                  <p>
+                    Nuestra misión es explorar cómo la automatización puede
+                    hacer más cómodos y organizados los accesos de un negocio.
+                  </p>
+                </div>
+              </div>
+              <div class="values-grid">
+                <article class="value-card">
+                  <span class="value-icon">◎</span>
+                  <h3>Problema</h3>
+                  <p>
+                    La supervisión constante y la apertura manual de accesos
+                    pueden resultar poco prácticas.
+                  </p>
+                </article>
+                <article class="value-card">
+                  <span class="value-icon">↗</span>
+                  <h3>Propósito</h3>
+                  <p>
+                    Desarrollar y demostrar una propuesta de apertura automática
+                    y por voz.
+                  </p>
+                </article>
+                <article class="value-card">
+                  <span class="value-icon">◇</span>
+                  <h3>Enfoque</h3>
+                  <p>
+                    Integrar sensores, ESP32, comunicación por USB e interfaz
+                    informática.
+                  </p>
+                </article>
+                <article class="value-card">
+                  <span class="value-icon">✧</span>
+                  <h3>Visión</h3>
+                  <p>
+                    Construir una base que pueda evolucionar hacia sistemas de
+                    acceso para negocios.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
+          <section
+            id="producto"
+            class="section page-section alternate"
+            aria-labelledby="productoTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">03 / NUESTRO PRODUCTO</span>
+                <h2 id="productoTitle">Presentamos <em>NEKI Hub.</em></h2>
+              </div>
+              <p>
+                Un sistema conceptual de control de acceso que conecta el
+                entorno físico con decisiones automatizadas.
+              </p>
+            </div>
+            <div class="product-feature">
+              <div class="product-image">
+                <div class="visual-grid"></div>
+                <div class="product-device">
+                  <div class="device-glow"></div>
+                  <div class="device-screen">
+                    <div class="device-top">
+                      <span>NEKI HUB</span><span>●</span>
+                    </div>
+                    <svg
+                      viewBox="0 0 240 170"
+                      aria-label="Dibujo de puerta con sensor"
+                    >
+                      <path
+                        d="M85 20h95v129H85Z"
+                        fill="#102e4c"
+                        stroke="#46c9f4"
+                        stroke-width="3"
+                      />
+                      <path
+                        d="M105 38h52v94h-52Z"
+                        fill="#0a1d34"
+                        stroke="#2779af"
+                      />
+                      <circle cx="143" cy="86" r="5" fill="#36dbca" />
+                      <path
+                        d="M57 66q13-13 26 0M48 56q22-22 43 0"
+                        stroke="#58d9ff"
+                        stroke-width="3"
+                        fill="none"
+                      />
+                      <circle cx="72" cy="74" r="4" fill="#40e2d4" />
+                      <path d="M25 151h190" stroke="#407293" /></svg
+                    ><small
+                      >Acceso inteligente • Representación conceptual</small
+                    >
+                  </div>
+                </div>
+                <div class="product-image-note">
+                  Aquí incorporaremos la fotografía auténtica de la maqueta
+                  terminada.
+                </div>
+                <img
+                  id="prototypePhoto"
+                  class="real-prototype"
+                  alt="Fotografía real del prototipo NEKI Hub"
+                  hidden
+                />
+              </div>
+              <div class="product-description">
+                <span class="small-badge">HARDWARE + SOFTWARE</span>
+                <h3>Diseñado para observar, decidir y actuar.</h3>
+                <p>
+                  NEKI Hub integra un sensor de presencia, señales de aviso y un
+                  mecanismo de apertura conectado a un ESP32. La laptop puede
+                  enviar una orden de voz reconocida como «abrir puerta» a
+                  través de USB.
+                </p>
+                <div class="benefit-list">
+                  <div>
+                    <span class="benefit-icon">01</span>
+                    <p>
+                      <b>Detección de presencia</b
+                      ><small
+                        >Reconoce cuando alguien se aproxima al acceso.</small
+                      >
+                    </p>
+                  </div>
+                  <div>
+                    <span class="benefit-icon">02</span>
+                    <p>
+                      <b>Apertura automatizada y por voz</b
+                      ><small
+                        >Acciona la puerta según la programación del
+                        prototipo.</small
+                      >
+                    </p>
+                  </div>
+                  <div>
+                    <span class="benefit-icon">03</span>
+                    <p>
+                      <b>Señalización y registro</b
+                      ><small
+                        >Usa indicadores LED, aviso sonoro y conteo de
+                        entradas.</small
+                      >
+                    </p>
+                  </div>
+                  <div>
+                    <span class="benefit-icon">04</span>
+                    <p>
+                      <b>Opción mediante pulsador</b
+                      ><small
+                        >Permite una orden de apertura local si hay alimentación
+                        eléctrica.</small
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="info-inline">
+                  A diferencia de una puerta convencional, el prototipo busca
+                  integrar diferentes métodos de apertura con registro
+                  informático. No es todavía un producto comercial certificado.
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            id="funcionamiento"
+            class="section page-section"
+            aria-labelledby="funcTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">04 / ARQUITECTURA</span>
+                <h2 id="funcTitle">Así funciona la <em>inteligencia.</em></h2>
+              </div>
+              <p>
+                Desde el evento de entrada hasta la apertura y su registro: una
+                cadena de decisiones coordinada.
+              </p>
+            </div>
+            <div
+              class="flow-diagram"
+              aria-label="Diagrama de arquitectura del sistema"
+            >
+              <div class="flow-node">
+                <span class="node-symbol">◎</span><b>Sensor</b
+                ><small>Detecta presencia</small>
+              </div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-node main-node">
+                <span class="node-symbol">▣</span><b>ESP32</b
+                ><small>Procesa señales</small>
+              </div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-node">
+                <span class="node-symbol">▥</span><b>Actuador</b
+                ><small>Abre la puerta</small>
+              </div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-node">
+                <span class="node-symbol">▤</span><b>Registro</b
+                ><small>Reporta eventos</small>
+              </div>
+            </div>
+            <div class="architecture-note">
+              <span>MICRÓFONO + LAPTOP</span>
+              <div class="connecting-line">
+                ↔ &nbsp; CABLE USB / PUERTO SERIAL &nbsp; ↔
+              </div>
+              <span>ESP32 + CIRCUITO</span>
+            </div>
+            <div class="two-column">
+              <div class="surface pad">
+                <h3>Secuencia de funcionamiento</h3>
+                <ol class="step-list">
+                  <li>
+                    <strong>Detección:</strong> el sensor registra la proximidad
+                    de una persona.
+                  </li>
+                  <li>
+                    <strong>Respuesta:</strong> el ESP32 enciende LED verde,
+                    activa aviso y acciona la puerta, según el programa.
+                  </li>
+                  <li>
+                    <strong>Registro:</strong> el sistema informa el estado y
+                    actualiza el contador de entradas.
+                  </li>
+                  <li>
+                    <strong>Alternativas:</strong> la laptop puede solicitar
+                    apertura mediante voz y el pulsador permite una orden local.
+                  </li>
+                </ol>
+              </div>
+              <div class="surface pad">
+                <h3>Componentes del prototipo</h3>
+                <div class="component-list">
+                  <div>
+                    <b>ESP32</b
+                    ><span>Control de entradas y salidas digitales</span>
+                  </div>
+                  <div>
+                    <b>Sensor de presencia</b
+                    ><span>Detección de paso; modelo exacto por confirmar</span>
+                  </div>
+                  <div>
+                    <b>LED rojo y verde</b
+                    ><span>Indicadores de espera y apertura</span>
+                  </div>
+                  <div>
+                    <b>Zumbador</b><span>Aviso acústico de eventos</span>
+                  </div>
+                  <div>
+                    <b>Motor o servomotor</b
+                    ><span>Apertura mecánica; modelo por confirmar</span>
+                  </div>
+                  <div>
+                    <b>Pulsador + laptop</b
+                    ><span>Comando físico y orden de voz mediante USB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="safety-note">
+              <b>Nota de seguridad:</b> si se corta la energía, un pulsador
+              eléctrico por sí solo no mueve la puerta. Para una apertura real
+              sin corriente se requeriría respaldo energético o liberación
+              mecánica.
+            </div>
+          </section>
+          <section
+            id="simulacion"
+            class="section page-section alternate"
+            aria-labelledby="simTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker"
+                  >05 / DEMOSTRACIÓN Y SIMULACIÓN</span
+                >
+                <h2 id="simTitle">Explora cómo responde <em>NEKI.</em></h2>
+              </div>
+              <p>
+                Una demostración interactiva para explicar el concepto; separada
+                de la simulación electrónica y del hardware real.
+              </p>
+            </div>
+            <div
+              class="tab-bar"
+              role="tablist"
+              aria-label="Opciones de demostración"
+            >
+              <button
+                role="tab"
+                id="tabBtnDemo"
+                aria-selected="true"
+                aria-controls="demoPanel"
+                class="tab-button selected"
+                data-tab="demo"
+              >
+                Demo interactiva</button
+              ><button
+                role="tab"
+                id="tabBtnVideo"
+                aria-selected="false"
+                aria-controls="videoPanel"
+                class="tab-button"
+                data-tab="video"
+              >
+                Video conceptual IA</button
+              ><button
+                role="tab"
+                id="tabBtnCircuit"
+                aria-selected="false"
+                aria-controls="circuitPanel"
+                class="tab-button"
+                data-tab="circuit"
+              >
+                Simulación electrónica
+              </button>
+            </div>
+            <div
+              id="demoPanel"
+              role="tabpanel"
+              aria-labelledby="tabBtnDemo"
+              class="tab-panel"
+            >
+              <div class="sim-layout">
+                <div class="sim-visual">
+                  <div class="sim-topline">
+                    <span>MAQUETA VIRTUAL</span
+                    ><span class="sim-label">SIMULACIÓN · NO CONECTADA</span>
+                  </div>
+                  <div class="room-art">
+                    <div class="room-ceiling">
+                      <div class="sensor-eye">
+                        <span>◉</span><small>SENSOR</small>
+                      </div>
+                    </div>
+                    <div class="door-frame">
+                      <div id="virtualDoor" class="virtual-door">
+                        <span class="door-knob"></span>
+                      </div>
+                    </div>
+                    <div class="room-floor"></div>
+                    <div class="status-bubbles">
+                      <div class="status-bubble">
+                        <span id="demoRed" class="led led-red on"></span
+                        ><small>LED rojo</small>
+                      </div>
+                      <div class="status-bubble">
+                        <span id="demoGreen" class="led led-green"></span
+                        ><small>LED verde</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sim-controls">
+                  <span class="tiny-label"
+                    >PANEL DE CONTROL · DEMOSTRACIÓN</span
+                  >
+                  <h3>Simula un acceso</h3>
+                  <p>
+                    Prueba las distintas acciones previstas y observa el cambio
+                    de estado. Los eventos de este panel son
+                    <b>ficticios para fines didácticos</b> y no se envían al
+                    monitoreo real.
+                  </p>
+                  <div class="demo-connection">
+                    <span class="mini-dot"></span
+                    ><span id="demoState">Puerta cerrada · en espera</span>
+                  </div>
+                  <div class="control-buttons">
+                    <button id="detectBtn" class="control-button">
+                      <span>◎</span> Simular sensor</button
+                    ><button id="voiceBtn" class="control-button">
+                      <span>♫</span> Comando «abrir puerta»</button
+                    ><button id="buttonBtn" class="control-button">
+                      <span>◉</span> Presionar pulsador</button
+                    ><button id="resetBtn" class="control-button muted">
+                      <span>↺</span> Cerrar / reiniciar
+                    </button>
+                  </div>
+                  <div class="demo-bottom">
+                    <span
+                      ><small>Entradas simuladas</small
+                      ><strong id="demoEntries">0</strong></span
+                    ><span
+                      ><small>Último evento simulado</small
+                      ><strong id="demoLast">Sin eventos</strong></span
+                    >
+                  </div>
+                  <button id="listenBtn" class="voice-demo-button">
+                    Probar micrófono en esta simulación</button
+                  ><small id="voiceDemoHint" class="muted-small"
+                    >Esta prueba de voz solo anima la maqueta virtual; no
+                    controla el ESP32.</small
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              id="videoPanel"
+              role="tabpanel"
+              aria-labelledby="tabBtnVideo"
+              class="tab-panel"
+              hidden
+            >
+              <div class="video-frame" id="videoMount">
+                <div class="empty-media">
+                  <span>▶</span>
+                  <h3>Tu video generado con IA irá aquí</h3>
+                  <p>
+                    El video mostrará una visualización conceptual de la maqueta
+                    y su funcionamiento. No sustituye fotografías reales del
+                    montaje.
+                  </p>
+                  <small
+                    >Configurar en
+                    <code>config.js → media.demoVideo</code></small
+                  >
+                </div>
+              </div>
+              <p class="media-disclosure">
+                Material audiovisual conceptual generado con inteligencia
+                artificial; no debe presentarse como grabación del prototipo
+                físico.
+              </p>
+            </div>
+            <div
+              id="circuitPanel"
+              role="tabpanel"
+              aria-labelledby="tabBtnCircuit"
+              class="tab-panel"
+              hidden
+            >
+              <div class="surface circuit-callout">
+                <span class="circuit-mark">◈</span>
+                <div>
+                  <h3>Simulación electrónica verificable</h3>
+                  <p>
+                    Esta sección incluirá el circuito de la maqueta en Wokwi,
+                    Tinkercad u otra herramienta. Se necesita el enlace público
+                    que proporcione el equipo de electrónica y la vista previa
+                    de las conexiones reales.
+                  </p>
+                  <img
+                    src="assets/simulacion.png"
+                    alt="Circuito electrónico de NEKI Hub simulado en Wokwi"
+                    class="circuit-preview"
+                  />
+                  <div id="simulationLinkMount">
+                    <span class="pending-tag"
+                      >Enlace del circuito pendiente</span
+                    >
+                  </div>
+                  <small
+                    >La demostración animada de arriba no reemplaza la
+                    simulación electrónica obligatoria.</small
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            id="monitoreo"
+            class="section page-section"
+            aria-labelledby="monitorTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker"
+                  >06 / DATOS DEL PROTOTIPO FÍSICO</span
+                >
+                <h2 id="monitorTitle">Monitoreo <em>en tiempo real.</em></h2>
+              </div>
+              <p>
+                Este panel está preparado para recibir información auténtica del
+                ESP32. No genera mediciones ni conteos inventados.
+              </p>
+            </div>
+            <div class="monitor-shell">
+              <div class="monitor-header">
+                <div>
+                  <span class="tiny-label on-dark"
+                    >TRANSMISIÓN DESDE EL ESP32</span
+                  >
+                  <h3>Centro de monitoreo</h3>
+                  <p id="monitorConnectionHint">
+                    Esperando conexión con el dispositivo real.
+                  </p>
+                </div>
+                <div class="monitor-actions">
+                  <span id="liveBadge" class="status-tag disconnected"
+                    ><i></i> Sin conexión</span
+                  ><button
+                    id="serialBtn"
+                    class="button button-primary monitor-connect"
+                  >
+                    Conectar ESP32 por USB
+                  </button>
+                </div>
+              </div>
+              <div class="monitor-metrics">
+                <div class="metric">
+                  <small>ESTADO DEL SENSOR</small
+                  ><strong id="realPresence">—</strong
+                  ><span>Dato recibido del dispositivo</span>
+                </div>
+                <div class="metric">
+                  <small>ESTADO DE LA PUERTA</small
+                  ><strong id="realDoor">—</strong
+                  ><span>Situación reportada</span>
+                </div>
+                <div class="metric">
+                  <small>ENTRADAS CONTADAS</small
+                  ><strong id="realEntries">—</strong
+                  ><span>Valor del prototipo</span>
+                </div>
+                <div class="metric">
+                  <small>ÚLTIMA ACTUALIZACIÓN</small
+                  ><strong id="realUpdated">—</strong
+                  ><span id="realUpdatedDate">Sin lecturas todavía</span>
+                </div>
+              </div>
+              <div class="monitor-bottom">
+                <div class="monitor-history">
+                  <div class="table-title">
+                    <h4>Historial de eventos reales</h4>
+                    <span id="historyCount">0 registros</span>
+                  </div>
+                  <div class="history-wrap">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Hora</th>
+                          <th>Evento</th>
+                          <th>Fuente</th>
+                        </tr>
+                      </thead>
+                      <tbody id="realHistory">
+                        <tr>
+                          <td colspan="3" class="empty-table">
+                            No se han recibido eventos del prototipo.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="monitor-channel">
+                  <h4>Comunicación implementable</h4>
+                  <div class="channel-step">
+                    <span>01</span>
+                    <div>
+                      <b>ESP32</b
+                      ><small>Envía lecturas JSON reales por USB serial.</small>
+                    </div>
+                  </div>
+                  <div class="channel-step">
+                    <span>02</span>
+                    <div>
+                      <b>Laptop / puente</b
+                      ><small
+                        >Lectura directa en Chrome/Edge o proceso Python.</small
+                      >
+                    </div>
+                  </div>
+                  <div class="channel-step">
+                    <span>03</span>
+                    <div>
+                      <b>Esta web</b
+                      ><small
+                        >Presenta los eventos; para varios dispositivos, lee
+                        Firebase.</small
+                      >
+                    </div>
+                  </div>
+                  <div class="monitor-guide" id="monitorGuide">
+                    En una laptop con Chrome/Edge, puedes conectar el USB
+                    directamente. Para mostrar datos a visitantes desde sus
+                    teléfonos, configura el puente de Firebase explicado en
+                    <code>README.md</code>.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="monitor-disclaimer">
+              Indicadores en blanco o desconectados significan que todavía no
+              hay datos verificables. La demostración visual de la sección 5 no
+              alimenta este panel.
+            </p>
+          </section>
+          <section
+            id="desarrollo"
+            class="section page-section alternate"
+            aria-labelledby="devTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">07 / PROCESO DE DESARROLLO</span>
+                <h2 id="devTitle">De la idea al <em>prototipo.</em></h2>
+              </div>
+              <p>
+                Un espacio para documentar cada etapa con evidencias auténticas
+                del trabajo del equipo.
+              </p>
+            </div>
+            <div
+              id="galleryMount"
+              class="gallery-grid"
+              aria-label="Galería de evidencia fotográfica real"
+            ></div>
+            <div class="timeline">
+              <div class="timeline-entry">
+                <span>01</span>
+                <div>
+                  <h3>Investigación y planificación</h3>
+                  <p>
+                    Definición de la necesidad, objetivos, componentes y
+                    arquitectura del sistema de acceso.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-entry">
+                <span>02</span>
+                <div>
+                  <h3>Montaje electrónico y programación</h3>
+                  <p>
+                    Integración del ESP32, sensor, actuador, LEDs, zumbador y
+                    pulsador, seguida de las pruebas de software.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-entry">
+                <span>03</span>
+                <div>
+                  <h3>Pruebas y documentación</h3>
+                  <p>
+                    Comprobación de las aperturas, lectura de eventos y
+                    recopilación de fotos reales para la exposición.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            id="codigo"
+            class="section page-section"
+            aria-labelledby="codeTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">08 / DESARROLLO TECNOLÓGICO</span>
+                <h2 id="codeTitle">La tecnología detrás <em>de NEKI.</em></h2>
+              </div>
+              <p>
+                El proyecto une algoritmos, programación y electrónica. El
+                código oficial deberá quedar accesible en GitHub.
+              </p>
+            </div>
+            <div class="code-grid">
+              <div class="code-card">
+                <div class="code-card-top">
+                  <span class="code-icon">{ }</span><span>01 / LÓGICA</span>
+                </div>
+                <h3>PSeInt</h3>
+                <p>
+                  Representación del algoritmo, decisiones de apertura y
+                  condiciones de entrada.
+                </p>
+
+                <small>Código PSeInt en GitHub</small>
+                <a
+                  class="code-link"
+                  href="https://github.com/danielgbunu-arch/NEKI-Hub/tree/main/PSeInt"
+                  target="_blank"
+                >
+                  <br />
+                  Ver carpeta PSeInt ↗
+                </a>
+              </div>
+              <div class="code-card">
+                <div class="code-card-top">
+                  <span class="code-icon">&lt;/&gt;</span
+                  ><span>02 / PROGRAMACIÓN</span>
+                </div>
+                <h3>Java</h3>
+                <p>
+                  Traducción del algoritmo a lenguaje Java conforme a las
+                  actividades del proyecto.
+                </p>
+
+                <small>Código Java en GitHub</small>
+                <a
+                  class="code-link"
+                  href="https://github.com/danielgbunu-arch/NEKI-Hub/tree/main/Java"
+                  target="_blank"
+                >
+                  <br />
+                  Ver carpeta Java ↗
+                </a>
+              </div>
+              <div class="code-card">
+                <div class="code-card-top">
+                  <span class="code-icon">▦</span><span>03 / ELECTRÓNICA</span>
+                </div>
+                <h3>ESP32</h3>
+                <p>
+                  Código del controlador para sensores, aviso, apertura y envío
+                  de datos por USB.
+                </p>
+
+                <small>Código del ESP32 en GitHub</small>
+                <a
+                  class="code-link"
+                  href="https://github.com/danielgbunu-arch/NEKI-Hub/tree/main/Electronica"
+                  target="_blank"
+                >
+                  <br />
+                  Ver código ESP32 ↗
+                </a>
+              </div>
+            </div>
+            <div class="repo-band">
+              <div>
+                <span class="tiny-label on-dark">REPOSITORIO PÚBLICO</span>
+                <h3>Proyecto abierto para su revisión.</h3>
+                <p>
+                  El repositorio debe incluir <code>PSeInt/</code>,
+                  <code>Java/</code> y <code>Electronica/</code> junto con un
+                  archivo README.
+                </p>
+              </div>
+              <div id="githubLinkMount">
+                <span class="pending-tag dark-pending">GitHub pendiente</span>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="resultados"
+            class="section page-section alternate"
+            aria-labelledby="resultsTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">
+                  09 / RESULTADOS Y APLICACIONES
+                </span>
+                <h2 id="resultsTitle">Tecnología puesta a <em>prueba.</em></h2>
+              </div>
+              <p>
+                Conoce las funciones desarrolladas en NEKI Hub, las pruebas
+                realizadas y sus posibles aplicaciones en pequeños negocios.
+              </p>
+            </div>
+
+            <div class="results-grid">
+              <article class="result-card">
+                <span>01</span>
+                <h3>Alarma de proximidad</h3>
+                <p>
+                  El sensor ultrasónico HC-SR04 detecta objetos cercanos y
+                  activa una alerta sonora mediante el buzzer cuando la puerta
+                  está en reposo.
+                </p>
+                <b>Verificado en la simulación Wokwi</b>
+              </article>
+
+              <article class="result-card">
+                <span>02</span>
+                <h3>Apertura mediante pulsador</h3>
+                <p>
+                  El sistema permite iniciar la apertura de la puerta utilizando
+                  un pulsador físico conectado al ESP32, sin depender del
+                  control web.
+                </p>
+                <b>Verificado en la simulación Wokwi</b>
+              </article>
+
+              <article class="result-card">
+                <span>03</span>
+                <h3>Ciclo automático de apertura</h3>
+                <p>
+                  El programa controla las etapas de apertura, espera y cierre.
+                  Los finales de carrera determinan los límites del movimiento.
+                </p>
+                <b>Secuencia verificada en Wokwi</b>
+              </article>
+
+              <article class="result-card">
+                <span>04</span>
+                <h3>Control web y comandos de voz</h3>
+                <p>
+                  El ESP32 recibe órdenes de apertura mediante Wi-Fi desde una
+                  aplicación web local. El sistema contempla el uso del comando
+                  de voz "Abrir puerta".
+                </p>
+                <b>Integración física por confirmar</b>
+              </article>
+            </div>
+
+            <div class="surface pad margin-top">
+              <h3>Resultados de las pruebas</h3>
+              <p>
+                Se realizaron pruebas funcionales en Wokwi utilizando una
+                adaptación electrónica de NEKI Hub. Se comprobó la activación de
+                la alarma, el pulsador manual, las señales de apertura y cierre,
+                los finales de carrera y la recepción de una orden externa.
+              </p>
+              <p>
+                El firmware también incorpora el registro del número de
+                aperturas y alarmas, junto con la consulta del estado mediante
+                una interfaz HTTP.
+              </p>
+              <p>
+                <strong>Importante:</strong> la simulación representa las
+                señales de control del motor; no reproduce físicamente el
+                movimiento de la puerta real.
+              </p>
+            </div>
+
+            <div class="two-column margin-top">
+              <div class="surface pad">
+                <h3>Aplicaciones del producto</h3>
+                <p>
+                  NEKI Hub está diseñado como una propuesta de automatización
+                  para pequeños comercios, espacios de atención y accesos
+                  supervisados.
+                </p>
+                <p>
+                  Su sistema de apertura motorizada y monitoreo puede servir
+                  como base para futuras soluciones de control de acceso.
+                </p>
+              </div>
+
+              <div class="surface pad">
+                <h3>Limitaciones y mejoras futuras</h3>
+                <p>
+                  El prototipo requiere alimentación eléctrica. El control web
+                  funciona mediante la red Wi-Fi local y el sensor ultrasónico
+                  no identifica personas ni diferencia entradas de salidas.
+                </p>
+                <p>
+                  <strong>Mejoras futuras:</strong>
+                  incorporar batería de respaldo, autenticación de usuarios,
+                  sensores adicionales y monitoreo remoto seguro.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="equipo"
+            class="section page-section"
+            aria-labelledby="teamTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">10 / NUESTRO EQUIPO</span>
+                <h2 id="teamTitle">Detrás de cada línea, <em>personas.</em></h2>
+              </div>
+              <p>
+                Ocho integrantes unen conocimientos de programación,
+                electrónica, investigación y comunicación.
+              </p>
+            </div>
+            <div
+              id="teamMount"
+              class="team-grid"
+              aria-label="Integrantes del equipo NEKI"
+            ></div>
+
+            <!-- DOCENTES RESPONSABLES DEL PROYECTO -->
+
+            <div class="docentes-section">
+              <div class="docentes-heading">
+                <span class="section-kicker"> ACOMPAÑAMIENTO ACADÉMICO </span>
+                <h3>Docentes responsables</h3>
+                <p>
+                  Profesionales que acompañan y orientan el desarrollo del
+                  proyecto NEKI Hub.
+                </p>
+              </div>
+
+              <div class="docentes-grid">
+                <article class="team-card docente-card">
+                  <div class="team-photo">
+                    <img
+                      src="assets/IngCarlos.jpeg"
+                      alt="Fotografía del docente 1"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="team-info">
+                    <b>Técnicas de Programación</b>
+                    <small>Docente Ing. Carlos Vargas</small>
+                  </div>
+                </article>
+
+                <article class="team-card docente-card">
+                  <div class="team-photo">
+                    <img
+                      src="assets/IngRichard.jpeg"
+                      alt="Fotografía del docente 2"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="team-info">
+                    <b>Lógica Matemática </b>
+                    <small>Docente Ing. Richard Sucuy</small>
+                  </div>
+                </article>
+
+                <article class="team-card docente-card">
+                  <div class="team-photo">
+                    <img
+                      src="assets/AbgElmer.jpeg"
+                      alt="Fotografía del docente 3"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="team-info">
+                    <b>Lenguaje y Comunicación</b>
+                    <small>Docente -Mgtr. Elmer Gallardo</small>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+          <section
+            id="contacto"
+            class="section page-section alternate contact-section"
+            aria-labelledby="contactTitle"
+          >
+            <div class="section-heading">
+              <div>
+                <span class="section-kicker">11 / CONTACTO</span>
+                <h2 id="contactTitle">Hablemos de <em>innovación.</em></h2>
+              </div>
+              <p>
+                NEKI Technologies es una marca ficticia creada para presentar
+                nuestro proyecto integrador de nivelación.
+              </p>
+            </div>
+            <div class="contact-grid">
+              <div class="contact-info">
+                <div class="contact-brand">
+                  <span class="contact-mark">N</span>
+                  <div>
+                    <h3>NEKI Technologies</h3>
+                    <p>Tecnología inteligente para proteger tu negocio.</p>
+                  </div>
+                </div>
+                <div class="contact-detail">
+                  <span>✉</span>
+                  <div>
+                    <small>CORREO</small
+                    ><b id="contactEmail">contacto@neki.example</b
+                    ><small class="mail-caution" id="mailCaution"
+                      >Dirección de ejemplo; aún no habilitada.</small
+                    >
+                  </div>
+                </div>
+                <div class="contact-detail">
+                  <span>⌁</span>
+                  <div>
+                    <small>PROYECTO</small><b>UTMACH · Nivelación TI · 2026</b>
+                  </div>
+                </div>
+                <div id="socialMount" class="social-mount">
+                  <span class="pending-tag">Redes del equipo por agregar</span>
+                </div>
+              </div>
+
+              <form class="contact-form" id="contactForm">
+                <h3>Envíanos tu mensaje</h3>
+
+                <p>
+                  ¿Te interesa NEKI Hub? Escríbenos y nos pondremos en contacto
+                  contigo.
+                </p>
+
+                <label for="visitorName">Tu nombre</label>
+                <input
+                  id="visitorName"
+                  name="name"
+                  type="text"
+                  placeholder="Escribe tu nombre"
+                  autocomplete="name"
+                  maxlength="100"
+                  required
+                />
+
+                <label for="visitorEmail">Tu correo electrónico</label>
+                <input
+                  id="visitorEmail"
+                  name="email"
+                  type="email"
+                  placeholder="ejemplo@gmail.com"
+                  autocomplete="email"
+                  required
+                />
+
+                <label for="visitorMessage">Tu mensaje</label>
+                <textarea
+                  id="visitorMessage"
+                  name="message"
+                  rows="5"
+                  placeholder="¿Qué te gustaría saber sobre NEKI Hub?"
+                  maxlength="1000"
+                  required
+                ></textarea>
+
+                <button class="button button-primary full-button" type="submit">
+                  Enviar mensaje ↗
+                </button>
+
+                <div
+                  id="contactFeedback"
+                  class="form-feedback"
+                  role="status"
+                  aria-live="polite"
+                ></div>
+              </form>
+            </div>
+          </section>
+        </main>
+        <footer class="site-footer">
+          <div>
+            <b>NEKI<span>.</span></b
+            ><span>Inteligencia aplicada a la seguridad de accesos.</span>
+          </div>
+          <div>
+            Proyecto académico UTMACH · <span id="footerYear">2026</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
