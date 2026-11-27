@@ -69,7 +69,7 @@ window.NEKI_CONFIG = {
       photo: "assets/int3.jpeg",
     },
     {
-      name: "sebastian Jara",
+      name: "Santiago Jara",
       role: "Integrante Hardware",
       photo: "assets/int1.jpeg",
     },
@@ -91,12 +91,12 @@ window.NEKI_CONFIG = {
     {
       name: "Miguel Vaca",
       role: "Integrante Hardware",
-      photo: "assets/int7.jpeg",
+      photo: "assets/int8.jpeg",
     },
     {
-      name: "Alex Auter",
+      name: "Auter Jumbo",
       role: "Integrante Software",
-      photo: "assets/int8.jpeg",
+      photo: "assets/int7.jpeg",
     },
   ],
 };
